@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 0px 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 'bs og'
+    'ad og'
+    'ad af'
+    'uf af';
+    min-height: 100vh;
+}
+
+.pd-6 {
+    padding: 6px;
+}
+
+.br-1 {
+    border-right: 1px solid #333;
+}
+
+.basic {
+    grid-area: bs;
+}
+
+.advance {
+    grid-area: ad;
+}
+
+.origin {
+    grid-area: og;
+}
+
+.after {
+    grid-area: af;
+}
+
+.upload {
+    grid-area: uf;
+}

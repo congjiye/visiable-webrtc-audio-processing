@@ -5,25 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>可视 WebRTC 音频处理</title>
+
+    <head>
+        <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/umd/react.development.js"></script>
+        <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', path='/css/index.css') }}">
+    </head>
 </head>
 
 <body>
-    Hello World
-    <form>
-        <input type="file" name="file" id="file">
-    </form>
-    <button onclick="upload()">test</button>
+    <div id="app"></div>
+    <script type="text/babel" src="{{ url_for('static', path='/js/index.js') }}"></script>
     <script>
         function upload() {
             let formData = new FormData()
-            let config = {
-                "use_agc": true,
-                "agc_config": {},
-                "use_ns": true,
-                "ns_config": {}
-            }
-
             formData.append("config", config)
             formData.append("file", document.getElementById("file").files[0])
             console.log(config)
