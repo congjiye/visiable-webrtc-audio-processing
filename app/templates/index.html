@@ -9,30 +9,133 @@
 
     <head>
         <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react/17.0.1/umd/react.development.js"></script>
-        <script crossorigin src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
+        <script crossorigin
+            src="https://cdn.bootcdn.net/ajax/libs/react-dom/17.0.1/umd/react-dom.development.js"></script>
         <script crossorigin src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <link rel="stylesheet" href="{{ url_for('static', path='/css/index.css') }}">
     </head>
 </head>
 
 <body>
-    <div id="app"></div>
-    <script type="text/babel" src="{{ url_for('static', path='/js/index.js') }}"></script>
+    <div id="app" class="container">
+        <div class="basic pd-6">
+            <h3>基本选项</h3>
+            <form>
+                <div>
+                    <h4>AGC</h4>
+                    <label for="use_agc">开启: </label>
+                    <input type="radio" id="use_agc" name="use_agc" checked />
+                    <label for="not_use_agc">关闭: </label>
+                    <input type="radio" id="not_use_agc" name="use_agc" />
+                </div>
+                <div>
+                    <h4>NS</h4>
+                    <label for="use_ns">开启: </label>
+                    <input type="radio" id="use_ns" name="use_ns" checked />
+                    <label for="not_use_ns">关闭: </label>
+                    <input type="radio" id="not_use_ns" name="use_ns" />
+                </div>
+            </form>
+        </div>
+        <form class="advance pd-6">
+            <div>
+                <strong>高级选项</strong>
+            </div>
+            <div>
+                <h4><label for="in_mic">in_mic</label></h4>
+                <input type="text" id="in_mic" value="1" />
+            </div>
+            <div>
+                <h4><label for="out_mic">out_mic</label></h4>
+                <input type="text" id="out_mic" value="255" />
+            </div>
+            <div>
+                <h4><label for="agc_level">agc_level</label></h4>
+                <input type="text" id="agc_level" value="2" />
+            </div>
+            <div>
+                <h4><label for="saturation_warning">saturation_warning</label></h4>
+                <input type="text" id="saturation_warning" value="1" />
+            </div>
+            <div>
+                <h4><label for="compose_gain">compose_gain</label></h4>
+                <input type="text" id="compose_gain" value="9" />
+            </div>
+            <div>
+                <h4><label for="target_level">target_level</label></h4>
+                <input type="text" id="target_level" value="3" />
+            </div>
+            <div>
+                <h4><label for="limiter_enable">limiter_enable</label></h4>
+                <input type="text" id="limiter_enable" value="1" />
+            </div>
+            <div>
+                <h4><label for="ns_level">ns_level</label></h4>
+                <input type="text" id="ns_level" value="1" />
+            </div>
+        </form>
+        <div class="origin pd-6">
+            <h3>原始数据</h3>
+            <div>
+                <audio controls src="" id="origin_audio"></audio>
+            </div>
+            <img src="" alt="原始音频" id="origin_image" width="640" height="120">
+        </div>
+        <div class="after pd-6">
+            <h3>处理后数据</h3>
+            <div>
+                <audio controls src="" id="processed_audio"></audio>
+            </div>
+            <img src="" alt="处理后音频" id="processed_image" width="640" height="120" />
+        </div>
+        <div class="upload pd-6">
+            <input type="file" accept="audio/*" onchange="checkFile(event)" id="file"></input>
+            <button onclick="upload()" style="margin-top: 10px; width: 100%; height: 40px;" id="submit"
+                disabled=true>开始处理</button>
+        </div>
+    </div>
     <script>
+        function checkFile(e) {
+            let btn = document.querySelector('#submit')
+            console.log(btn)
+            if (e.target.files[0].size !== 0) {
+                btn.disabled = false
+            } else {
+                btn.disabled = true
+            }
+        }
+
         function upload() {
             let formData = new FormData()
-            formData.append("config", config)
+            formData.append("use_agc", document.getElementById("use_agc").value)
+            formData.append("use_ns", document.getElementById("use_ns").value)
             formData.append("file", document.getElementById("file").files[0])
-            console.log(config)
-            console.log(formData)
+            formData.append("in_mic", document.getElementById("in_mic").value)
+            formData.append("out_mic", document.getElementById("out_mic").value)
+            formData.append("agc_level", document.getElementById("agc_level").value)
+            formData.append("saturation_warning", document.getElementById("saturation_warning").value)
+            formData.append("compose_gain", document.getElementById("compose_gain").value)
+            formData.append("target_level", document.getElementById("target_level").value)
+            formData.append("limiter_enable", document.getElementById("limiter_enable").value)
+            formData.append("ns_level", document.getElementById("ns_level").value)
+
+            let origin_audio = document.getElementById("origin_audio")
+            let origin_image = document.getElementById("origin_image")
+            let processed_audio = document.getElementById("processed_audio")
+            let processed_image = document.getElementById("processed_image")
 
             fetch('/upload', {
                 method: 'POST',
                 body: formData
             }).then(res => {
-                console.log(res)
+                return res.json()
+            }).then(res => {
+                origin_audio.src = res.data.origin_audio
+                origin_image.src = res.data.origin_wave_image
+                processed_audio.src = res.data.processed_audio
+                processed_image.src = res.data.processed_wave_image
             }).catch(err => {
-                console.log(err)
+                console.log(err.json())
             })
         }
     </script>
