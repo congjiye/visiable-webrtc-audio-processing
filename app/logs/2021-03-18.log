@@ -1,0 +1,52 @@
+2021-03-18T19:44:32.115607+0800 - ERROR - <function request_validation_exception_handler at 0x000001366388B9D0>
+NoneType: None
+2021-03-18T19:44:32.156609+0800 - ERROR - <function request_validation_exception_handler at 0x00000136639ADAF0>
+NoneType: None
+2021-03-18T19:44:32.156609+0800 - ERROR - <function request_validation_exception_handler at 0x00000136639ADAF0>
+NoneType: None
+2021-03-18T19:46:04.808225+0800 - ERROR - <function request_validation_exception_handler at 0x000001624877B9D0>
+NoneType: None
+2021-03-18T19:46:04.848225+0800 - ERROR - <function request_validation_exception_handler at 0x000001624889DAF0>
+NoneType: None
+2021-03-18T19:46:04.848225+0800 - ERROR - <function request_validation_exception_handler at 0x000001624889DAF0>
+NoneType: None
+2021-03-18T19:46:42.713779+0800 - ERROR - <function request_validation_exception_handler at 0x000001F508FCB9D0>
+NoneType: None
+2021-03-18T19:46:42.754779+0800 - ERROR - <function request_validation_exception_handler at 0x000001F5090EDAF0>
+NoneType: None
+2021-03-18T19:46:42.754779+0800 - ERROR - <function request_validation_exception_handler at 0x000001F5090EDAF0>
+NoneType: None
+2021-03-18T20:16:53.150919+0800 - INFO - Test
+2021-03-18T20:16:53.150919+0800 - INFO - Test
+2021-03-18T20:16:53.154916+0800 - ERROR - What
+NoneType: None
+2021-03-18T20:16:53.154916+0800 - ERROR - What
+NoneType: None
+2021-03-18T20:17:14.833504+0800 - ERROR - <function request_validation_exception_handler at 0x000001D6001FB9D0>
+NoneType: None
+2021-03-18T20:17:14.876475+0800 - ERROR - <function request_validation_exception_handler at 0x000001D60031DAF0>
+NoneType: None
+2021-03-18T20:17:14.876475+0800 - ERROR - <function request_validation_exception_handler at 0x000001D60031DAF0>
+NoneType: None
+2021-03-18T20:49:40.861014+0800 - WARNING - [{'loc': ('body', 'use_agc'), 'msg': 'field required', 'type': 'value_error.missing'}]
+2021-03-18T20:49:40.861014+0800 - WARNING - [{'loc': ('body', 'use_agc'), 'msg': 'field required', 'type': 'value_error.missing'}]
+2021-03-18T20:52:01.322467+0800 - WARNING - [{'loc': ('body', 21), 'msg': 'Expecting property name enclosed in double quotes: line 3 column 1 (char 21)', 'type': 'value_error.jsondecode', 'ctx': {'msg': 'Expecting property name enclosed in double quotes', 'doc': '{\n  "use_agc": true,\n}', 'pos': 21, 'lineno': 3, 'colno': 1}}]
+2021-03-18T20:52:01.322467+0800 - WARNING - [{'loc': ('body', 21), 'msg': 'Expecting property name enclosed in double quotes: line 3 column 1 (char 21)', 'type': 'value_error.jsondecode', 'ctx': {'msg': 'Expecting property name enclosed in double quotes', 'doc': '{\n  "use_agc": true,\n}', 'pos': 21, 'lineno': 3, 'colno': 1}}]
+2021-03-18T20:53:34.007267+0800 - WARNING - [{'loc': ('body', 78), 'msg': 'Expecting property name enclosed in double quotes: line 6 column 3 (char 78)', 'type': 'value_error.jsondecode', 'ctx': {'msg': 'Expecting property name enclosed in double quotes', 'doc': '{\n  "use_agc": true,\n  "agc_config": {\n    "in_mic": 0,\n    "out_mic": 255,\n  }\n}', 'pos': 78, 'lineno': 6, 'colno': 3}}]
+2021-03-18T20:53:34.007267+0800 - WARNING - [{'loc': ('body', 78), 'msg': 'Expecting property name enclosed in double quotes: line 6 column 3 (char 78)', 'type': 'value_error.jsondecode', 'ctx': {'msg': 'Expecting property name enclosed in double quotes', 'doc': '{\n  "use_agc": true,\n  "agc_config": {\n    "in_mic": 0,\n    "out_mic": 255,\n  }\n}', 'pos': 78, 'lineno': 6, 'colno': 3}}]
+2021-03-18T21:14:50.302272+0800 - WARNING - [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:14:50.302272+0800 - WARNING - [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:15:48.347221+0800 - WARNING - [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:15:48.347221+0800 - WARNING - [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:16:15.951272+0800 - INFO - Save upload file into file/aa8f962158014ba3af0efbca36063e6f.json
+2021-03-18T21:16:15.951272+0800 - INFO - Save upload file into file/aa8f962158014ba3af0efbca36063e6f.json
+2021-03-18T21:17:24.242959+0800 - INFO - Save upload file into file/aa8f962158014ba3af0efbca36063e6f.json
+2021-03-18T21:17:24.242959+0800 - INFO - Save upload file into file/aa8f962158014ba3af0efbca36063e6f.json
+2021-03-18T21:17:24.245984+0800 - INFO - Finished saving upload file
+2021-03-18T21:17:24.245984+0800 - INFO - Finished saving upload file
+2021-03-18T21:25:38.277698+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:29:46.267643+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:30:01.898098+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:30:17.562618+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:32:26.437545+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-18T21:32:26.437545+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
