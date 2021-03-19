@@ -19,9 +19,6 @@
     padding: 6px;
 }
 
-.br-1 {
-    border-right: 1px solid #333;
-}
 
 .basic {
     grid-area: bs;
@@ -41,4 +38,32 @@
 
 .upload {
     grid-area: uf;
+}
+
+label {
+    cursor: pointer;
+}
+
+strong {
+    font-size: 1.17em;
+}
+
+.basic div {
+    margin: 8px 0px;
+}
+
+.basic div input {
+    margin-right: 5px;
+}
+
+.advance div {
+    margin: 8px 0px;
+}
+
+.origin div {
+    margin: 10px 0px;
+}
+
+.after div {
+    margin: 10px 0px;
 }
