@@ -12,6 +12,7 @@ from starlette.responses import HTMLResponse, Response
 from starlette.templating import Jinja2Templates
 import uvicorn
 import shutil
+import uuid
 import time
 import sys
 import os
@@ -51,7 +52,7 @@ logger.add(sink=log_file_path,
 
 
 # 保存文件目录
-save_file_dir = os.path.join(os.path.dirname(__file__), 'uploads')
+save_file_dir = os.path.join(os.path.dirname(__file__), 'static', 'audios')
 if not os.path.exists(save_file_dir):
     os.mkdir(save_file_dir)
 
@@ -62,7 +63,7 @@ async def request_validation_exception_handler(request: Request, err: RequestVal
         f'Invalid arguments {request.method} {request.url} {err.errors()}')
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,
-        content=jsonable_encoder({"detail": err.errors(), "body": err.body()})
+        content=jsonable_encoder({"detail": err.errors()})
     )
 
 
@@ -83,26 +84,35 @@ class NSConfig(BaseModel):
 
 
 # Audio Processing 配置
-class APConfig(BaseModel):
-    use_agc: bool
-    agc_config: Optional[AGCConfig] = None
-    use_ns: bool
-    ns_config: Optional[NSConfig] = None
+class APConfig:
+
+    def __init__(self, use_agc, in_mic, out_mic, agc_level, saturation_warning,
+                 compose_gain, target_level, limiter_enable, use_ns, ns_level) -> None:
+        self.use_agc = use_agc
+        self.in_mic = in_mic
+        self.out_mic = out_mic
+        self.agc_level = agc_level
+        self.saturation_warning = saturation_warning
+        self.compose_gain = compose_gain
+        self.target_level = target_level
+        self.limiter_enable = limiter_enable
+        self.use_ns = use_ns
+        self.ns_level = ns_level
 
 
-def gen_ap_command(file_path: str, config: APConfig) -> str:
-    cmd = f""" -i {file_path} -o {file_path}.wav 
-        --use-agc={config.use_agc} --agc-level={config.agc_config.agc_level} 
-        --in-mic={config.agc_config.in_mic} --out-mic={config.agc_config.out_mic} 
-        --saturation-warning={config.agc_config.saturation_warning} 
-        --compress-gain={config.agc_config.compose_gain} 
-        --target-level={config.agc_config.target_level} 
-        --limiter-enable={config.agc_config.limiter_enable} 
-        --use-ns={config.use_ns} --ns-level={config.ns_config.ns_level}"""
+def gen_ap_command(file_path: str, dst_path: str, config: APConfig) -> str:
+    cmd = f""" -i {file_path} -o {dst_path}
+        --use-agc={config.use_agc} --agc-level={config.agc_level} 
+        --in-mic={config.in_mic} --out-mic={config.out_mic} 
+        --saturation-warning={config.saturation_warning} 
+        --compress-gain={config.compose_gain} 
+        --target-level={config.target_level} 
+        --limiter-enable={config.limiter_enable} 
+        --use-ns={config.use_ns} --ns-level={config.ns_level}"""
     if platform == 'win32':
-        cmd += 'audio_processing.exe'
+        cmd = 'audio_processing.exe' + cmd
         return cmd
-    cmd += './audio_processing'
+    cmd = './audio_processing' + cmd
     return cmd
 
 
@@ -128,12 +138,12 @@ def error_process_response(*, data: str = None, message: str = "Internal Error")
 
 
 def gen_wave_image(origin_path: str, processed_path: str):
-    origin_image_path = f'static/images/{origin_path.split("/")[-1]}.png'
-    processed_image_path = f'static/images/{processed_path(".")[-1]}.png'
+    origin_image_path = f'static/images/{str(uuid.uuid4())}.png'
+    processed_image_path = f'static/images/{str(uuid.uuid4())}.png'
     os.system(
-        f'ffmpeg -i {origin_path} -filter_complex "showwavespic=s=640*120" -frames:v 1 {origin_image_path}')
+        f'ffmpeg -i {origin_path} -filter_complex "showwavespic=s=640*120" -frames:v 1 {origin_image_path} -loglevel quiet -y')
     os.system(
-        f'ffmpeg -i {processed_path} -filter_complex "showwavespic=s=640*120" -frames:v 1 {processed_image_path}')
+        f'ffmpeg -i {processed_path} -filter_complex "showwavespic=s=640*120" -frames:v 1 {processed_image_path} -loglevel quiet -y')
     return origin_image_path, processed_image_path
 
 
@@ -143,8 +153,21 @@ async def index(request: Request):
 
 
 @app.post('/upload')
-async def process_upload_audio(config: APConfig = Form(...), file: UploadFile = File(...)):
-    file_path = f'static/audios/{file.filename}'
+async def process_upload_audio(request: Request,
+                               use_agc: bool = Form(...),
+                               in_mic: Optional[int] = 0,
+                               out_mic: Optional[int] = 255,
+                               agc_level: Optional[int] = 2,
+                               saturation_warning: Optional[int] = 1,
+                               compose_gain: Optional[int] = 9,
+                               target_level: Optional[int] = 3,
+                               limiter_enable: Optional[int] = 1,
+                               use_ns: bool = Form(...),
+                               ns_level: Optional[int] = 1,
+                               file: UploadFile = File(...)):
+    file_path = f'static/audios/{str(uuid.uuid4())}{file.filename.split(".")[-1]}'
+    transfer_path = f'static/audios/{str(uuid.uuid4())}.wav'
+    logger.info(file_path)
     logger.info(f'Save upload file into {file_path}')
 
     data = await file.read()
@@ -152,25 +175,30 @@ async def process_upload_audio(config: APConfig = Form(...), file: UploadFile = 
         f.write(data)
 
     logger.info('Finished saving upload file')
-    if os.system(f'ffmpeg -f s16le -ar 16000 -ac 1 {file_path} {file_path}.wav') != 0:
+    if os.system(f'ffmpeg -f s16le -ar 16000 -ac 1 -i {file_path} {transfer_path} -loglevel quiet -y') != 0:
         os.remove(file_path)
         logger.warning(f'Transfer audio file {file.filename} to 16k 1c failed')
         return error_process_response(data={
             'cause': 'transfer audio by ffmpeg failed'
         })
 
-    cmd = gen_ap_command(f'{file_path}.wav')
+    config = APConfig(use_agc, in_mic, out_mic, agc_level, saturation_warning,
+                      compose_gain, target_level, limiter_enable, use_ns, ns_level)
+
+    dst_path = f'static/audios/{str(uuid.uuid4())}.wav'
+    cmd = gen_ap_command(transfer_path, dst_path, config)
     if os.system(cmd) != 0:
         logger.warning(f'{file.filename} do audio processing failed')
-        return error_process_response(data={
+        return {error_process_response(data={
             'cause': 'audio processing failed'
-        })
+        })}
 
-    os.remove(f'{file_path}.wav')
-    origin_wave_image, processed_wave_image = gen_wave_image(file_path, f'{file_path}.wav.wav')
+    os.remove(transfer_path)
+    origin_wave_image, processed_wave_image = gen_wave_image(
+        file_path, dst_path)
     return success_process_response(data={
         'origin_audio': file_path,
-        'processed_audio': f'{file_path}.wav.wav',
+        'processed_audio': dst_path,
         'origin_wave_image': origin_wave_image,
         'processed_wave_image': processed_wave_image
     })

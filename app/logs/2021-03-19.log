@@ -1,0 +1,142 @@
+2021-03-19T15:39:46.438674+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T15:39:46.438674+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T15:39:59.289352+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T15:39:59.289352+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T15:42:24.782925+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T15:42:24.782925+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:00:33.450968+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:00:33.450968+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:00:56.297728+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:00:56.297728+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:03:32.552449+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}, {'loc': ('body', 'file'), 'msg': "Expected UploadFile, received: <class 'str'>", 'type': 'value_error'}]
+2021-03-19T16:03:32.552449+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}, {'loc': ('body', 'file'), 'msg': "Expected UploadFile, received: <class 'str'>", 'type': 'value_error'}]
+2021-03-19T16:03:37.739878+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:03:37.739878+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:06:41.145784+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:06:41.145784+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:06:56.802889+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:06:56.802889+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:07:37.585928+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:07:37.585928+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:13:48.229943+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:13:48.229943+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:13:57.282446+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:13:57.282446+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:16:55.676294+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:16:55.676294+0800 - WARNING - Invalid arguments POST http://localhost:5000/upload [{'loc': ('body', 'config'), 'msg': 'value is not a valid dict', 'type': 'type_error.dict'}]
+2021-03-19T16:22:05.270775+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:22:05.270775+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:22:05.274775+0800 - INFO - Finished saving upload file
+2021-03-19T16:22:05.274775+0800 - INFO - Finished saving upload file
+2021-03-19T16:22:06.259653+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:22:06.259653+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:24:44.429102+0800 - INFO - static/audios/test.wav
+2021-03-19T16:24:44.429102+0800 - INFO - static/audios/test.wav
+2021-03-19T16:24:44.431101+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:24:44.431101+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:24:44.435104+0800 - INFO - Finished saving upload file
+2021-03-19T16:24:44.435104+0800 - INFO - Finished saving upload file
+2021-03-19T16:24:44.473101+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:24:44.473101+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:27:59.737680+0800 - INFO - d:\Gallery\CLionProjects\audio_processing\app\static\audios/test.wav
+2021-03-19T16:27:59.737680+0800 - INFO - d:\Gallery\CLionProjects\audio_processing\app\static\audios/test.wav
+2021-03-19T16:27:59.740683+0800 - INFO - Save upload file into d:\Gallery\CLionProjects\audio_processing\app\static\audios/test.wav
+2021-03-19T16:27:59.740683+0800 - INFO - Save upload file into d:\Gallery\CLionProjects\audio_processing\app\static\audios/test.wav
+2021-03-19T16:27:59.744683+0800 - INFO - Finished saving upload file
+2021-03-19T16:27:59.744683+0800 - INFO - Finished saving upload file
+2021-03-19T16:27:59.784681+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:27:59.784681+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:28:42.170447+0800 - INFO - static/audios/test.wav
+2021-03-19T16:28:42.170447+0800 - INFO - static/audios/test.wav
+2021-03-19T16:28:42.173446+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:28:42.173446+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:29:27.658755+0800 - INFO - static/audios/test.wav
+2021-03-19T16:29:27.658755+0800 - INFO - static/audios/test.wav
+2021-03-19T16:29:27.661723+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:29:27.661723+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:29:54.787202+0800 - INFO - static/audios/test.wav
+2021-03-19T16:29:54.787202+0800 - INFO - static/audios/test.wav
+2021-03-19T16:29:54.789203+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:29:54.789203+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:29:54.793208+0800 - INFO - Finished saving upload file
+2021-03-19T16:29:54.793208+0800 - INFO - Finished saving upload file
+2021-03-19T16:29:54.831227+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:29:54.831227+0800 - WARNING - Transfer audio file test.wav to 16k 1c failed
+2021-03-19T16:30:18.569828+0800 - INFO - static/audios/test.wav
+2021-03-19T16:30:18.569828+0800 - INFO - static/audios/test.wav
+2021-03-19T16:30:18.571828+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:30:18.571828+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:30:18.573799+0800 - INFO - Finished saving upload file
+2021-03-19T16:30:18.573799+0800 - INFO - Finished saving upload file
+2021-03-19T16:34:02.901947+0800 - INFO - static/audios/test.wav
+2021-03-19T16:34:02.901947+0800 - INFO - static/audios/test.wav
+2021-03-19T16:34:02.903947+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:34:02.903947+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:34:02.907950+0800 - INFO - Finished saving upload file
+2021-03-19T16:34:02.907950+0800 - INFO - Finished saving upload file
+2021-03-19T16:34:36.428439+0800 - INFO - static/audios/test.wav
+2021-03-19T16:34:36.428439+0800 - INFO - static/audios/test.wav
+2021-03-19T16:34:36.431439+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:34:36.431439+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:34:36.433441+0800 - INFO - Finished saving upload file
+2021-03-19T16:34:36.433441+0800 - INFO - Finished saving upload file
+2021-03-19T16:34:39.547693+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:34:39.547693+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:35:10.001909+0800 - INFO - static/audios/test.wav
+2021-03-19T16:35:10.001909+0800 - INFO - static/audios/test.wav
+2021-03-19T16:35:10.003910+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:35:10.003910+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:35:10.007914+0800 - INFO - Finished saving upload file
+2021-03-19T16:35:10.007914+0800 - INFO - Finished saving upload file
+2021-03-19T16:35:10.084910+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:35:10.084910+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:36:02.774390+0800 - INFO - static/audios/test.wav
+2021-03-19T16:36:02.774390+0800 - INFO - static/audios/test.wav
+2021-03-19T16:36:02.775415+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:36:02.775415+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:36:02.778392+0800 - INFO - Finished saving upload file
+2021-03-19T16:36:02.778392+0800 - INFO - Finished saving upload file
+2021-03-19T16:36:23.994184+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:36:23.994184+0800 - WARNING - test.wav do audio processing failed
+2021-03-19T16:36:41.952066+0800 - INFO - static/audios/test.wav
+2021-03-19T16:36:41.952066+0800 - INFO - static/audios/test.wav
+2021-03-19T16:36:41.955065+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:36:41.955065+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:36:41.957069+0800 - INFO - Finished saving upload file
+2021-03-19T16:36:41.957069+0800 - INFO - Finished saving upload file
+2021-03-19T16:37:02.354737+0800 - INFO - static/audios/test.wav
+2021-03-19T16:37:02.354737+0800 - INFO - static/audios/test.wav
+2021-03-19T16:37:02.356738+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:37:02.356738+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:37:02.360774+0800 - INFO - Finished saving upload file
+2021-03-19T16:37:02.360774+0800 - INFO - Finished saving upload file
+2021-03-19T16:37:35.781731+0800 - INFO - static/audios/test.wav
+2021-03-19T16:37:35.781731+0800 - INFO - static/audios/test.wav
+2021-03-19T16:37:35.783730+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:37:35.783730+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:37:35.787735+0800 - INFO - Finished saving upload file
+2021-03-19T16:37:35.787735+0800 - INFO - Finished saving upload file
+2021-03-19T16:38:09.830665+0800 - INFO - static/audios/test.wav
+2021-03-19T16:38:09.830665+0800 - INFO - static/audios/test.wav
+2021-03-19T16:38:09.833635+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:38:09.833635+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:38:09.836638+0800 - INFO - Finished saving upload file
+2021-03-19T16:38:09.836638+0800 - INFO - Finished saving upload file
+2021-03-19T16:38:50.087816+0800 - INFO - static/audios/test.wav
+2021-03-19T16:38:50.087816+0800 - INFO - static/audios/test.wav
+2021-03-19T16:38:50.090788+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:38:50.090788+0800 - INFO - Save upload file into static/audios/test.wav
+2021-03-19T16:38:50.094790+0800 - INFO - Finished saving upload file
+2021-03-19T16:38:50.094790+0800 - INFO - Finished saving upload file
+2021-03-19T16:45:55.540724+0800 - INFO - static/audios/872592ce-cd03-46e5-b1d8-05e07b749be8wav
+2021-03-19T16:45:55.540724+0800 - INFO - static/audios/872592ce-cd03-46e5-b1d8-05e07b749be8wav
+2021-03-19T16:45:55.542725+0800 - INFO - Save upload file into static/audios/872592ce-cd03-46e5-b1d8-05e07b749be8wav
+2021-03-19T16:45:55.542725+0800 - INFO - Save upload file into static/audios/872592ce-cd03-46e5-b1d8-05e07b749be8wav
+2021-03-19T16:45:55.545726+0800 - INFO - Finished saving upload file
+2021-03-19T16:45:55.545726+0800 - INFO - Finished saving upload file
+2021-03-19T16:47:21.760919+0800 - INFO - static/audios/6ad55e2a-bf5e-4e0d-80a7-e298233d483fwav
+2021-03-19T16:47:21.760919+0800 - INFO - static/audios/6ad55e2a-bf5e-4e0d-80a7-e298233d483fwav
+2021-03-19T16:47:21.763905+0800 - INFO - Save upload file into static/audios/6ad55e2a-bf5e-4e0d-80a7-e298233d483fwav
+2021-03-19T16:47:21.763905+0800 - INFO - Save upload file into static/audios/6ad55e2a-bf5e-4e0d-80a7-e298233d483fwav
+2021-03-19T16:47:21.767891+0800 - INFO - Finished saving upload file
+2021-03-19T16:47:21.767891+0800 - INFO - Finished saving upload file
